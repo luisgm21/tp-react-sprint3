@@ -3,12 +3,13 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import User from "../pages/User";
+import { ROUTE_PATHS } from "./routePaths";
 
 const appRoutes = (
-    <Route path="/" element={<MainLayout />}>
+    <Route path={ROUTE_PATHS.HOME} element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="user/:id" element={<User />} />
+        <Route path={ROUTE_PATHS.ABOUT} element={<About />} />
+        <Route path={ROUTE_PATHS.USER} element={<User />} />
     </Route>
 );
 
