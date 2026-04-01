@@ -1,9 +1,9 @@
-import { useOutletContext } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 import MovieCard from "../components/featureMovies/MovieCard";
 import { MOVIES } from "../data/movies";
 
 export default function Home() {
-  const { addToCart } = useOutletContext();
+  const { addToCart } = useAppContext();
 
   return (
     <section className="mx-auto w-full max-w-6xl space-y-8">
