@@ -52,6 +52,7 @@ const CartModal = ({
                       {item.genre}
                     </span>
                     <span className="text-xs font-medium text-amber-700">⭐ {item.rating}</span>
+                    <span className="text-xs font-semibold text-emerald-700">${item.price}</span>
                   </div>
                 </div>
                 <button
@@ -67,9 +68,14 @@ const CartModal = ({
         </div>
 
         <div className="flex items-center justify-between border-t border-slate-200/70 bg-slate-50/70 px-6 py-4">
-          <p className="text-sm text-slate-500">
-            Total de peliculas: <span className="font-semibold text-slate-900">{items.length}</span>
-          </p>
+          <div className="space-y-0.5">
+            <p className="text-sm text-slate-500">
+              Total de peliculas: <span className="font-semibold text-slate-900">{items.length}</span>
+            </p>
+            <p className="text-sm text-slate-500">
+              Total a pagar: <span className="font-semibold text-emerald-700">${items.reduce((acc, item) => acc + item.price, 0).toFixed(2)}</span>
+            </p>
+          </div>
           <button
             type="button"
             onClick={onClose}

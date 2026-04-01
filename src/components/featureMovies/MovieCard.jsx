@@ -24,9 +24,14 @@ const MovieCard = ({ movie, onAddToCart = () => {} }) => {
             </p>
             <h3 className="text-lg font-semibold">{movie.title}</h3>
           </div>
-          <span className="whitespace-nowrap rounded-full bg-amber-300/90 px-3 py-1 text-sm font-bold text-amber-950">
-            ⭐ {movie.rating}
-          </span>
+          <div className="flex flex-col items-end gap-1">
+            <span className="whitespace-nowrap rounded-full bg-amber-300/90 px-3 py-1 text-sm font-bold text-amber-950">
+              ⭐ {movie.rating}
+            </span>
+            <span className="whitespace-nowrap rounded-full bg-emerald-500/90 px-3 py-1 text-sm font-bold text-white">
+              ${movie.price}
+            </span>
+          </div>
         </div>
       </div>
 
