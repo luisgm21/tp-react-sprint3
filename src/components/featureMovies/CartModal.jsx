@@ -37,8 +37,7 @@ const CartModal = ({
             items.map((item, index) => (
               <article
                 key={`${item.id}-${index}`}
-                className="flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 shadow-sm dark:border-slate-700 dark:bg-slate-800/80"
-  900000000000000000000000000000000000000000000000000000000000000000000000000000000000000                                                                                                         >
+                className="flex items-center gap-4 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 shadow-sm dark:border-slate-700 dark:bg-slate-800/80">
                 <img
                   src={item.poster}
                   alt={`Poster de ${item.title}`}
