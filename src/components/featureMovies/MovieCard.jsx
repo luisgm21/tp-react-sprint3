@@ -2,7 +2,7 @@ const MovieCard = ({ movie, onAddToCart = () => {} }) => {
   if (!movie) return null;
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/80 dark:bg-slate-900/80">
       <div className="relative aspect-[3/4] overflow-hidden">
         <img
           src={movie.poster}
@@ -13,7 +13,7 @@ const MovieCard = ({ movie, onAddToCart = () => {} }) => {
         <button
           type="button"
           onClick={() => onAddToCart(movie)}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg backdrop-blur transition hover:bg-white"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg backdrop-blur transition hover:bg-white dark:bg-slate-100 dark:hover:bg-slate-200"
         >
           Agregar al carro
         </button>
@@ -36,15 +36,15 @@ const MovieCard = ({ movie, onAddToCart = () => {} }) => {
       </div>
 
       <div className="space-y-3 p-4">
-        <p className="text-sm text-slate-600">
-          <span className="font-semibold text-slate-900">Director:</span>{" "}
+        <p className="text-sm text-slate-600 dark:text-slate-300">
+          <span className="font-semibold text-slate-900 dark:text-slate-100">Director:</span>{" "}
           {movie.director}
         </p>
         <div className="flex items-center justify-between gap-3">
-          <span className="inline-flex rounded-full bg-slate-900/10 px-3 py-1 text-xs font-medium text-slate-700">
+          <span className="inline-flex rounded-full bg-slate-900/10 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-200/15 dark:text-slate-200">
             {movie.genre}
           </span>
-          <span className="text-xs uppercase tracking-[0.2em] text-slate-400">
+          <span className="text-xs uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
             Disponible
           </span>
         </div>

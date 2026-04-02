@@ -9,7 +9,7 @@ const MainLayout = () => {
   const { cartItems, isCartOpen, openCart, closeCart, removeFromCart } = useAppContext()
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100">
       <Navbar
         links={NAV_LINKS}
         cartCount={cartItems.length}

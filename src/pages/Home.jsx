@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <section className="mx-auto w-full max-w-6xl space-y-8">
       <div className="space-y-2">
-        <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-400">
+        <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-400 dark:text-slate-500">
           Cartelera
         </p>
-        <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+        <h1 className="text-3xl font-semibold text-slate-900 dark:text-slate-100 sm:text-4xl">
           Peliculas destacadas
         </h1>
-        <p className="max-w-2xl text-sm text-slate-600 sm:text-base">
+        <p className="max-w-2xl text-sm text-slate-600 dark:text-slate-300 sm:text-base">
           Explora una seleccion de peliculas con una presentacion visual lista para conectar al carrito mas adelante.
         </p>
       </div>

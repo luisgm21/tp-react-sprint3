@@ -4,6 +4,17 @@ const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    try {
+      const savedTheme = localStorage.getItem('theme')
+      if (savedTheme === 'dark') return true
+      if (savedTheme === 'light') return false
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+    } catch (error) {
+      console.error('Error al leer tema de localStorage:', error)
+      return false
+    }
+  })
 
   const [cartItems, setCartItems] = useState(() => {
     try {
@@ -23,8 +34,20 @@ export const AppProvider = ({ children }) => {
     }
   }, [cartItems])
 
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.toggle('dark', isDarkMode)
+
+    try {
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
+    } catch (error) {
+      console.error('Error al guardar tema en localStorage:', error)
+    }
+  }, [isDarkMode])
+
   const openCart = () => setIsCartOpen(true)
   const closeCart = () => setIsCartOpen(false)
+  const toggleDarkMode = () => setIsDarkMode((current) => !current)
 
   const addToCart = (movie) => {
     setCartItems((currentItems) => [...currentItems, movie])
@@ -42,8 +65,10 @@ export const AppProvider = ({ children }) => {
   const values = {
     cartItems,
     isCartOpen,
+    isDarkMode,
     openCart,
     closeCart,
+    toggleDarkMode,
     addToCart,
     removeFromCart,
   }
